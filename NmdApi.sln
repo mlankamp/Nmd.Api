@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E5D3456F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nmd.Tests.Unit", "tests\Nmd.Tests.Unit\Nmd.Tests.Unit.csproj", "{1A6DE659-B2F7-469C-B9C7-953A041DF818}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{C15BD650-DEA9-4698-A429-513D149809ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nmd.Console.Example", "samples\Nmd.Console.Example\Nmd.Console.Example.csproj", "{684F6A09-CAA9-4616-AD3D-85205344E526}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{1A6DE659-B2F7-469C-B9C7-953A041DF818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A6DE659-B2F7-469C-B9C7-953A041DF818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A6DE659-B2F7-469C-B9C7-953A041DF818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{684F6A09-CAA9-4616-AD3D-85205344E526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{684F6A09-CAA9-4616-AD3D-85205344E526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{684F6A09-CAA9-4616-AD3D-85205344E526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{684F6A09-CAA9-4616-AD3D-85205344E526}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1A6DE659-B2F7-469C-B9C7-953A041DF818} = {E5D3456F-1F31-4A71-8C96-A19F7749FCA5}
+		{684F6A09-CAA9-4616-AD3D-85205344E526} = {C15BD650-DEA9-4698-A429-513D149809ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF969933-05A1-4A86-ABBE-7A71B6D81E32}
