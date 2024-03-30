@@ -1,4 +1,5 @@
 # NMD Api
+![](https://github.com/mlankamp/Nmd.Api/workflows/Run%20automated%20tests/badge.svg)
 
 This project allows you to easily add the [Nationale Milieudatabase](https://api.documentatie.milieudatabase.nl/) to your application.
 
