@@ -1,0 +1,1241 @@
+openapi: 3.0.3
+info:
+  title: Nationale Milieudatabase API
+  version: ''
+  x-logo:
+    url: https://documentatie.milieudatabase.nl/_static/logo.svg
+  description: >-
+
+    This documentation describes the API for 'instrumenthouders' who query the
+
+    database for impacts cores to use in MPG-calculations.
+
+
+    # Introduction
+
+
+    In The Netherlands, The Environmental Performance Assessment
+
+    Method for Construction Works, or Assessment Method, is a uniform method to
+
+    calculate the environmental performance of structures in an unambiguous,
+
+    verifiable and reproducible way. This Assessment Method is based on the
+
+    European norm EN 15804, which is the basis for drafting Environmental
+
+    Product Declarations (EPD’s). An EPD is a standardized document that
+    declares the
+
+    environmental impact of the products life cycle. The environmental impact is
+
+    divided into different environmental impact categories, for example Global
+
+    Warming Potential, and is calculated by means of a Life Cycle Analysis
+    (LCA).
+        
+  contact:
+    name: Nationale Milieudatabase
+    url: https://milieudatabase.nl/
+paths:
+  /api/3.0/assessment-strategies/:
+    get:
+      operationId: api_3.0_assessment_strategies_list
+      summary: List all Assessment Strategies
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAssessmentStrategyList'
+          description: ''
+  /api/3.0/assessment-strategies/{id}/:
+    get:
+      operationId: api_3.0_assessment_strategies_retrieve
+      summary: Retrieve single Assessment Strategy
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this assessment strategy.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssessmentStrategy'
+          description: ''
+  /api/3.0/classification-systems/:
+    get:
+      operationId: api_3.0_classification_systems_list
+      summary: List all Classification Systems
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedClassificationSystemList'
+          description: ''
+  /api/3.0/classification-systems/{id}/:
+    get:
+      operationId: api_3.0_classification_systems_retrieve
+      summary: Retrieve single Classification System
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this Classification system.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClassificationSystem'
+          description: ''
+  /api/3.0/components/:
+    get:
+      operationId: api_3.0_components_list
+      summary: List all Components
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedComponentList'
+          description: ''
+  /api/3.0/components/{id}/:
+    get:
+      operationId: api_3.0_components_retrieve
+      summary: Retrieve single Component
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this component.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Component'
+          description: ''
+  /api/3.0/data-owners/:
+    get:
+      operationId: api_3.0_data_owners_list
+      summary: List all Data Owners
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedDataOwnerList'
+          description: ''
+  /api/3.0/data-owners/{id}/:
+    get:
+      operationId: api_3.0_data_owners_retrieve
+      summary: Retrieve single Data Owner
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this data owner.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataOwner'
+          description: ''
+  /api/3.0/elements/:
+    get:
+      operationId: api_3.0_elements_list
+      summary: List all Elements
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedElementList'
+          description: ''
+  /api/3.0/elements/{id}/:
+    get:
+      operationId: api_3.0_elements_retrieve
+      summary: Retrieve single Element
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this element.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Element'
+          description: ''
+  /api/3.0/environmental-declarations/:
+    get:
+      operationId: api_3.0_environmental_declarations_list
+      description: >-
+
+        Using the date_start and date_end parameters and range of dates can be
+        defined
+
+        for which the API must return environmental_declarations that where
+        either
+
+        activated or deactivated (or both) during the defined period.
+                
+      summary: List all Environmental Declarations
+      parameters:
+        - in: query
+          name: date_end
+          schema:
+            type: string
+            format: date
+          description: >-
+
+            The end date for the range of environmental declarations. The date
+            format should be ISO
+
+            8601.
+                            
+          examples:
+            February21st,2023:
+              value: '2023-02-21'
+              summary: February 21st, 2023
+        - in: query
+          name: date_start
+          schema:
+            type: string
+            format: date
+          description: >-
+
+            The starting date for the range of environmental declarations. The
+            date format should
+
+            be ISO 8601.
+                            
+          examples:
+            February11th,2023:
+              value: '2023-02-11'
+              summary: February 11th, 2023
+        - name: page
+          required: false
+          in: query
+          description: A page number within the paginated result set.
+          schema:
+            type: integer
+        - name: page_size
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedEnvironmentalDeclarationList'
+          description: ''
+  /api/3.0/environmental-declarations/{id}/:
+    get:
+      operationId: api_3.0_environmental_declarations_retrieve
+      summary: Retrieve single Environmental Declaration
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this Environmental declaration.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnvironmentalDeclaration'
+          description: ''
+  /api/3.0/fields-of-application/:
+    get:
+      operationId: api_3.0_fields_of_application_list
+      summary: List all Field of Applications
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedFieldOfApplicationList'
+          description: ''
+  /api/3.0/fields-of-application/{id}/:
+    get:
+      operationId: api_3.0_fields_of_application_retrieve
+      summary: Retrieve single Field of Application
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this field of application.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FieldOfApplication'
+          description: ''
+  /api/3.0/impact-indicators/:
+    get:
+      operationId: api_3.0_impact_indicators_list
+      summary: List all Impact Indicators
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedImpactIndicatorList'
+          description: ''
+  /api/3.0/impact-indicators/{id}/:
+    get:
+      operationId: api_3.0_impact_indicators_retrieve
+      summary: Retrieve single Impact Indicator
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this Impact indicator.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssessmentStrategyImpactIndicator'
+          description: ''
+  /api/3.0/registrations/:
+    get:
+      operationId: api_3.0_registrations_list
+      summary: List all Registrations
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedRegistrationList'
+          description: ''
+  /api/3.0/registrations/{id}/:
+    get:
+      operationId: api_3.0_registrations_retrieve
+      summary: Retrieve single Registration
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: >-
+            A UUID string identifying this Environmental declaration
+            registration.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Registration'
+          description: ''
+  /api/3.0/stages/:
+    get:
+      operationId: api_3.0_stages_list
+      summary: List all Stages
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedStageList'
+          description: ''
+  /api/3.0/stages/{id}/:
+    get:
+      operationId: api_3.0_stages_retrieve
+      summary: Retrieve single Stage
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this Stage.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stage'
+          description: ''
+  /api/3.0/units/:
+    get:
+      operationId: api_3.0_units_list
+      summary: List all Units
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedUnitList'
+          description: ''
+  /api/3.0/units/{id}/:
+    get:
+      operationId: api_3.0_units_retrieve
+      summary: Retrieve single Unit
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this unit.
+          required: true
+      tags:
+        - Version 3.0rc1
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
+          description: ''
+components:
+  schemas:
+    AssessmentStrategy:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+        impact_indicators:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssessmentStrategyImpactIndicator'
+        impact_modules:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssessmentStrategyImpactModule'
+      required:
+        - id
+        - impact_indicators
+        - impact_modules
+        - title
+    AssessmentStrategyImpactIndicator:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        assessment_strategy:
+          type: string
+          format: uuid
+        impact_indicator:
+          type: string
+          format: uuid
+        weight:
+          type: number
+          format: double
+        ordering:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Volgorde
+      required:
+        - assessment_strategy
+        - id
+        - impact_indicator
+        - weight
+    AssessmentStrategyImpactModule:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        assessment_strategy:
+          type: string
+          format: uuid
+        impact_module:
+          type: string
+          format: uuid
+        ordering:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Volgorde
+      required:
+        - assessment_strategy
+        - id
+        - impact_module
+    BlankEnum:
+      enum:
+        - ''
+    CategoryEnum:
+      enum:
+        - category-1
+        - category-2
+        - category-3
+        - category-3a
+      type: string
+    ClassificationInline:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        components:
+          type: array
+          items:
+            type: string
+            format: uuid
+          readOnly: true
+      required:
+        - components
+        - id
+    ClassificationSystem:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+      required:
+        - id
+        - title
+    Component:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 550
+        code:
+          type: string
+          maxLength: 50
+        element:
+          type: string
+          format: uuid
+        cuas:
+          type: string
+          format: uuid
+          nullable: true
+        is_required:
+          type: boolean
+        functional_unit:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+        - code
+        - element
+        - id
+        - title
+    ComponentInline:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 550
+        code:
+          type: string
+          maxLength: 50
+        cuas:
+          type: string
+          format: uuid
+          nullable: true
+        is_required:
+          type: boolean
+        functional_unit:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+        - code
+        - id
+        - title
+    ConstructionProduct:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 500
+        description:
+          type: string
+          maxLength: 8000
+        brand:
+          type: string
+          title: Product brand
+          maxLength: 500
+        field_of_application:
+          type: string
+          format: uuid
+          nullable: true
+        lifespan:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        unit:
+          type: string
+          format: uuid
+          readOnly: true
+          description: This value should be determined based on the selected Element
+        classifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassificationInline'
+          readOnly: true
+      required:
+        - classifications
+        - id
+        - lifespan
+        - title
+        - unit
+    DataOwner:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          title: Data owner
+          maxLength: 255
+      required:
+        - id
+        - title
+    Element:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        code:
+          type: string
+          maxLength: 50
+        title:
+          type: string
+          maxLength: 550
+        description:
+          type: string
+          title: Functional description
+        classification_system:
+          type: string
+          format: uuid
+        functional_unit:
+          type: string
+          format: uuid
+        components:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComponentInline'
+          readOnly: true
+      required:
+        - classification_system
+        - code
+        - components
+        - functional_unit
+        - id
+        - title
+    EnvironmentalDeclaration:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        registration:
+          type: string
+          format: uuid
+        active_from:
+          type: string
+          format: date-time
+        active_until:
+          type: string
+          format: date-time
+          nullable: true
+        owner:
+          type: string
+          format: uuid
+          nullable: true
+        construction_product:
+          allOf:
+            - $ref: '#/components/schemas/ConstructionProduct'
+          readOnly: true
+        environmental_profiles:
+          type: string
+          readOnly: true
+      required:
+        - active_from
+        - construction_product
+        - environmental_profiles
+        - id
+        - registration
+    FieldOfApplication:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          title: Application name
+          maxLength: 255
+        classification_systems:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassificationSystem'
+          readOnly: true
+      required:
+        - classification_systems
+        - id
+        - title
+    ImpactIndicator:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+        unit:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+        - id
+        - title
+    ImpactModuleInline:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+          maxLength: 255
+      required:
+        - description
+        - id
+        - title
+    NullEnum:
+      enum:
+        - null
+    PaginatedAssessmentStrategyList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssessmentStrategy'
+    PaginatedClassificationSystemList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassificationSystem'
+    PaginatedComponentList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Component'
+    PaginatedDataOwnerList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataOwner'
+    PaginatedElementList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Element'
+    PaginatedEnvironmentalDeclarationList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentalDeclaration'
+    PaginatedFieldOfApplicationList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldOfApplication'
+    PaginatedImpactIndicatorList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImpactIndicator'
+    PaginatedRegistrationList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Registration'
+    PaginatedStageList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Stage'
+    PaginatedUnitList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Unit'
+    Registration:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        registration_number:
+          type: string
+          maxLength: 100
+        registered_at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Date of first admittance
+        category:
+          nullable: true
+          oneOf:
+            - $ref: '#/components/schemas/CategoryEnum'
+            - $ref: '#/components/schemas/BlankEnum'
+            - $ref: '#/components/schemas/NullEnum'
+      required:
+        - id
+        - registered_at
+        - registration_number
+    Stage:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+          maxLength: 255
+        impact_modules:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImpactModuleInline'
+          readOnly: true
+      required:
+        - description
+        - id
+        - impact_modules
+        - title
+    Unit:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 50
+        code:
+          type: string
+          maxLength: 50
+        title_html:
+          type: string
+          title: Html entities
+          maxLength: 100
+        description:
+          type: string
+      required:
+        - id
+        - title
