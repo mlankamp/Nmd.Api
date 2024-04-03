@@ -1007,7 +1007,6 @@ components:
       required:
         - assessment_strategy
         - id
-        - scores
     EnvironmentalDeclaration:
       type: object
       properties:
