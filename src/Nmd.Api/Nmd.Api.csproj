@@ -13,10 +13,10 @@
 		<Product>NMD API client</Product>
 		<PackageProjectUrl>https://github.com/mlankamp/Nmd.Api</PackageProjectUrl>
 		<PackageTags>NMD;Milieudatabase;NationaleMilieuDatabase</PackageTags>
-		<Version>1.0.4</Version>
+		<Version>1.0.5</Version>
 		<AssemblyVersion>1.0.0</AssemblyVersion>
 		<FileVersion>1.0.0</FileVersion>
-		<PackageVersion>1.0.4</PackageVersion>
+		<PackageVersion>1.0.5</PackageVersion>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<Title>NMD API client</Title>
