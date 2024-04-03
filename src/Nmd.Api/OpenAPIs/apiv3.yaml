@@ -56,7 +56,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -77,7 +77,7 @@ paths:
           description: A UUID string identifying this assessment strategy.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -103,7 +103,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -124,7 +124,7 @@ paths:
           description: A UUID string identifying this Classification system.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -150,7 +150,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -171,13 +171,60 @@ paths:
           description: A UUID string identifying this component.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Component'
+          description: ''
+  /api/3.0/cuas/:
+    get:
+      operationId: api_3.0_cuas_list
+      summary: List all CUAS types
+      parameters:
+        - name: limit
+          required: false
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          required: false
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      tags:
+        - Version 3.0 (latest)
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCuasList'
+          description: ''
+  /api/3.0/cuas/{id}/:
+    get:
+      operationId: api_3.0_cuas_retrieve
+      summary: Retrieve single CUAS type
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            format: uuid
+          description: A UUID string identifying this CUAS.
+          required: true
+      tags:
+        - Version 3.0 (latest)
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cuas'
           description: ''
   /api/3.0/data-owners/:
     get:
@@ -197,7 +244,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -218,7 +265,7 @@ paths:
           description: A UUID string identifying this data owner.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -244,7 +291,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -265,7 +312,7 @@ paths:
           description: A UUID string identifying this element.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -333,7 +380,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -354,7 +401,7 @@ paths:
           description: A UUID string identifying this Environmental declaration.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -380,7 +427,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -401,7 +448,7 @@ paths:
           description: A UUID string identifying this field of application.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -427,7 +474,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -448,13 +495,13 @@ paths:
           description: A UUID string identifying this Impact indicator.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AssessmentStrategyImpactIndicator'
+                $ref: '#/components/schemas/ImpactIndicator'
           description: ''
   /api/3.0/registrations/:
     get:
@@ -474,7 +521,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -497,7 +544,7 @@ paths:
             registration.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -523,7 +570,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -544,7 +591,7 @@ paths:
           description: A UUID string identifying this Stage.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -570,7 +617,7 @@ paths:
           schema:
             type: integer
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -591,7 +638,7 @@ paths:
           description: A UUID string identifying this unit.
           required: true
       tags:
-        - Version 3.0rc1
+        - Version 3.0 (latest)
       responses:
         '200':
           content:
@@ -672,6 +719,25 @@ components:
         - assessment_strategy
         - id
         - impact_module
+    AuthToken:
+      type: object
+      properties:
+        grant_type:
+          $ref: '#/components/schemas/GrantTypeEnum'
+        TOKEN:
+          type: string
+          readOnly: true
+          description: The access token to use on all requests
+      required:
+        - TOKEN
+        - grant_type
+    AuthTokenRequest:
+      type: object
+      properties:
+        grant_type:
+          $ref: '#/components/schemas/GrantTypeEnum'
+      required:
+        - grant_type
     BlankEnum:
       enum:
         - ''
@@ -810,6 +876,27 @@ components:
         - lifespan
         - title
         - unit
+    Cuas:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 255
+        description:
+          type: string
+          maxLength: 255
+        remarks:
+          type: string
+          maxLength: 255
+      required:
+        - description
+        - id
+        - remarks
+        - title
     DataOwner:
       type: object
       properties:
@@ -823,6 +910,40 @@ components:
           maxLength: 255
       required:
         - id
+        - title
+    Dimension:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 500
+        unit:
+          type: string
+          format: uuid
+          nullable: true
+        minimum:
+          type: number
+          format: double
+          nullable: true
+        maximum:
+          type: number
+          format: double
+          nullable: true
+        inspected_value:
+          type: number
+          format: double
+          nullable: true
+        ordering:
+          type: integer
+          readOnly: true
+          title: Sorteer op
+      required:
+        - id
+        - ordering
         - title
     Element:
       type: object
@@ -858,6 +979,35 @@ components:
         - functional_unit
         - id
         - title
+    EnvironmentalDataInline:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        assessment_strategy:
+          type: string
+          format: uuid
+        score_file:
+          type: string
+          format: uri
+          nullable: true
+          description: This is the PSS file (.xlxs)
+        scores:
+          type: array
+          nullable: true
+          items:
+            type: array
+            items:
+              type: number
+              format: double
+              title: Score
+          readOnly: true
+      required:
+        - assessment_strategy
+        - id
+        - scores
     EnvironmentalDeclaration:
       type: object
       properties:
@@ -884,7 +1034,9 @@ components:
             - $ref: '#/components/schemas/ConstructionProduct'
           readOnly: true
         environmental_profiles:
-          type: string
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentalProfileInline'
           readOnly: true
       required:
         - active_from
@@ -892,6 +1044,39 @@ components:
         - environmental_profiles
         - id
         - registration
+    EnvironmentalProfileInline:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 700
+        amount:
+          type: number
+          format: double
+          readOnly: true
+        environmental_declaration:
+          type: string
+          format: uuid
+        environmental_data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvironmentalDataInline'
+          readOnly: true
+        scaling:
+          allOf:
+            - $ref: '#/components/schemas/Scaling'
+          readOnly: true
+          nullable: true
+      required:
+        - amount
+        - environmental_data
+        - environmental_declaration
+        - id
+        - scaling
     FieldOfApplication:
       type: object
       properties:
@@ -912,6 +1097,17 @@ components:
         - classification_systems
         - id
         - title
+    FormulaEnum:
+      enum:
+        - v3_linear
+        - v3_power
+        - v3_logarithmic
+        - v3_exponential
+      type: string
+    GrantTypeEnum:
+      enum:
+        - client_credentials
+      type: string
     ImpactIndicator:
       type: object
       properties:
@@ -946,6 +1142,273 @@ components:
         - description
         - id
         - title
+    NmdAlleSchalingsTypeProducten:
+      type: object
+      properties:
+        Resource:
+          type: string
+        ZoekDatum:
+          type: string
+        Message:
+          type: string
+        results:
+          type: string
+          readOnly: true
+      required:
+        - Message
+        - Resource
+        - ZoekDatum
+        - results
+    NmdDailyUpdate:
+      type: object
+      properties:
+        Resource:
+          type: string
+        zoekDatum:
+          type: string
+        Message:
+          type: string
+          readOnly: true
+        Nieuwe_Publicaties:
+          $ref: '#/components/schemas/NmdProductCardUpdates'
+        Gedeactiveerde_Entiteiten:
+          $ref: '#/components/schemas/NmdProductCardDeactivation'
+      required:
+        - Gedeactiveerde_Entiteiten
+        - Message
+        - Nieuwe_Publicaties
+        - Resource
+        - zoekDatum
+    NmdEenheidVersies:
+      type: object
+      description: The Eenheid describes a unit.
+      properties:
+        ID:
+          type: integer
+        EenheidID:
+          type: integer
+        code:
+          type: string
+        weergave:
+          type: string
+        TekstWeergave:
+          type: string
+        omschrijving:
+          type: string
+        VersieNR:
+          type: integer
+        Bijschaling:
+          type: boolean
+        DatumActief:
+          type: integer
+        DatumInActief:
+          type: integer
+      required:
+        - Bijschaling
+        - DatumActief
+        - DatumInActief
+        - EenheidID
+        - ID
+        - TekstWeergave
+        - VersieNR
+        - code
+        - omschrijving
+        - weergave
+    NmdElementElementVersies:
+      type: object
+      description: |-
+        ElementElement describes the relations between the Elements.
+        There are two types of Elements:
+         - OuderElement: A classification for a classification system like nl-sfb
+         - KindElement: Defines a purpose to be fulfilled by product part.
+      properties:
+        ID:
+          type: integer
+        ElementElementID:
+          type: integer
+        OuderElementID:
+          type: integer
+        KindElementID:
+          type: integer
+        VersieNR:
+          type: integer
+        DatumActief:
+          type: integer
+        DatumInActief:
+          type: integer
+      required:
+        - DatumActief
+        - DatumInActief
+        - ElementElementID
+        - ID
+        - KindElementID
+        - OuderElementID
+        - VersieNR
+    NmdMilieucategorieVersies:
+      type: object
+      description: >-
+        Milieucategorie describes categories of impacts that are relevant to the
+
+        environment. Examples could be global warming, fresh water usage or
+        acidification.
+      properties:
+        ID:
+          type: integer
+        CategorieID:
+          type: integer
+        Milieueffect:
+          type: string
+        EnvironmentalImpact:
+          type: string
+        Eenheid:
+          type: string
+        EenheidID:
+          type: integer
+        Omschrijving:
+          type: string
+        IS_Indicator:
+          type: boolean
+        SorteerWaarde:
+          type: integer
+        VersieNR:
+          type: integer
+        Wegingsfactor:
+          type: number
+          format: double
+        DatumActief:
+          type: integer
+        DatumInActief:
+          type: integer
+      required:
+        - CategorieID
+        - DatumActief
+        - DatumInActief
+        - Eenheid
+        - EenheidID
+        - EnvironmentalImpact
+        - ID
+        - IS_Indicator
+        - Milieueffect
+        - Omschrijving
+        - SorteerWaarde
+        - VersieNR
+        - Wegingsfactor
+    NmdProductCardDeactivation:
+      type: object
+      properties:
+        NMD_Product_Versies:
+          type: string
+          readOnly: true
+        NMD_Eenheid_Versies:
+          type: boolean
+          nullable: true
+        NMD_Type_Kaart_Versies:
+          type: boolean
+          nullable: true
+        NMD_Milieucategorie_Versies:
+          type: boolean
+          nullable: true
+        NMD_Element_Versies:
+          type: boolean
+          nullable: true
+        NMD_Element_Element_Versies:
+          type: boolean
+          nullable: true
+        NMD_Fasen_Versies:
+          type: boolean
+          nullable: true
+        NMD_Schalingsformules_Versies:
+          type: boolean
+          nullable: true
+        NMD_ToepassingsGebieden_Versies:
+          type: boolean
+          nullable: true
+        NMD_BouwwerkFuncties_Versies:
+          type: boolean
+          nullable: true
+      required:
+        - NMD_BouwwerkFuncties_Versies
+        - NMD_Eenheid_Versies
+        - NMD_Element_Element_Versies
+        - NMD_Element_Versies
+        - NMD_Fasen_Versies
+        - NMD_Milieucategorie_Versies
+        - NMD_Product_Versies
+        - NMD_Schalingsformules_Versies
+        - NMD_ToepassingsGebieden_Versies
+        - NMD_Type_Kaart_Versies
+    NmdProductCardUpdates:
+      type: object
+      properties:
+        NMD_Product_Versies:
+          type: string
+          readOnly: true
+          nullable: true
+        NMD_Product_Product_Versies:
+          type: string
+          readOnly: true
+          nullable: true
+        NMD_Product_Element_ProfielSet_Versies:
+          type: string
+          readOnly: true
+          nullable: true
+        NMD_ProfielSets_Versies:
+          type: string
+          readOnly: true
+          nullable: true
+        NMD_Profiel_Versies:
+          type: string
+          readOnly: true
+          nullable: true
+        NMD_ProfielMilieueffect_Versies:
+          type: string
+          readOnly: true
+          nullable: true
+        NMD_Eenheid_Versies:
+          type: array
+          items:
+            $ref: '#/components/schemas/NmdEenheidVersies'
+          nullable: true
+        NMD_Type_Kaart_Versies:
+          type: boolean
+          nullable: true
+        NMD_Milieucategorie_Versies:
+          type: array
+          items:
+            $ref: '#/components/schemas/NmdMilieucategorieVersies'
+          nullable: true
+        NMD_Element_Element_Versies:
+          type: array
+          items:
+            $ref: '#/components/schemas/NmdElementElementVersies'
+          nullable: true
+        NMD_Fasen_Versies:
+          type: boolean
+          nullable: true
+        NMD_Schalingsformules_Versies:
+          type: boolean
+          nullable: true
+        NMD_BouwwerkFuncties_Versies:
+          type: boolean
+          nullable: true
+        NMD_ToepassingsGebieden_Versies:
+          type: boolean
+          nullable: true
+      required:
+        - NMD_BouwwerkFuncties_Versies
+        - NMD_Eenheid_Versies
+        - NMD_Element_Element_Versies
+        - NMD_Fasen_Versies
+        - NMD_Milieucategorie_Versies
+        - NMD_Product_Element_ProfielSet_Versies
+        - NMD_Product_Product_Versies
+        - NMD_Product_Versies
+        - NMD_ProfielMilieueffect_Versies
+        - NMD_ProfielSets_Versies
+        - NMD_Profiel_Versies
+        - NMD_Schalingsformules_Versies
+        - NMD_ToepassingsGebieden_Versies
+        - NMD_Type_Kaart_Versies
     NullEnum:
       enum:
         - null
@@ -1009,6 +1472,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Component'
+    PaginatedCuasList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cuas'
     PaginatedDataOwnerList:
       type: object
       properties:
@@ -1194,6 +1677,47 @@ components:
         - id
         - registered_at
         - registration_number
+    Scaling:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        formula:
+          $ref: '#/components/schemas/FormulaEnum'
+        parameters:
+          type: array
+          items:
+            type: number
+            format: double
+            title: Params
+        reference_input:
+          type: array
+          items:
+            type: array
+            items:
+              type: number
+              format: double
+              title: Score
+          nullable: true
+        reference_output:
+          type: array
+          items:
+            type: number
+            format: double
+            title: Score
+          nullable: true
+        dimensions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dimension'
+          readOnly: true
+      required:
+        - dimensions
+        - formula
+        - id
+        - parameters
     Stage:
       type: object
       properties:
@@ -1239,3 +1763,4 @@ components:
       required:
         - id
         - title
+  
