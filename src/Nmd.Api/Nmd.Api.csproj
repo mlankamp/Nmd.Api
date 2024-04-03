@@ -38,7 +38,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<OpenApiReference Include="OpenAPIs\apiv3.yaml" ClassName="NMDClient" Options="/AdditionalNamespaceUsages:NMD.Api.Shared /GenerateExceptionClasses:false /UseBaseUrl:false /GenerateClientInterfaces:true /OperationGenerationMode:MultipleClientsFromPathSegments /GeneratePrepareRequestAndProcessResponseAsAsyncMethods:true" Namespace="NMD.Api" CodeGenerator="NSwagCSharp" />
+		<OpenApiReference Include="OpenAPIs\apiv3.yaml" ClassName="NMDClient" Options="/AdditionalNamespaceUsages:NMD.Api.Shared /GenerateExceptionClasses:false /UseBaseUrl:false /GenerateClientInterfaces:true /OperationGenerationMode:MultipleClientsFromPathSegments /GeneratePrepareRequestAndProcessResponseAsAsyncMethods:true /ArrayType:System.Collections.Generic.IList /ArrayInstanceType:System.Collections.Generic.List" Namespace="NMD.Api" CodeGenerator="NSwagCSharp" />
 	</ItemGroup>
 	
 	<ItemGroup>
