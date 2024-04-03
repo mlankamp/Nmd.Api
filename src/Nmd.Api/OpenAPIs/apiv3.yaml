@@ -1075,7 +1075,6 @@ components:
         - environmental_data
         - environmental_declaration
         - id
-        - scaling
     FieldOfApplication:
       type: object
       properties:
