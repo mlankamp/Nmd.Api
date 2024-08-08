@@ -1101,6 +1101,7 @@ components:
         - v3_power
         - v3_logarithmic
         - v3_exponential
+        - v4_nonlinear
       type: string
     GrantTypeEnum:
       enum:
