@@ -1102,6 +1102,7 @@ components:
         - v3_logarithmic
         - v3_exponential
         - v4_nonlinear
+        - v4_linear
       type: string
     GrantTypeEnum:
       enum:
